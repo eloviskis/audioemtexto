@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transcrição de Áudio</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Transcrição de Áudio</h1>
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file">Escolha um arquivo de áudio:</label>
+        <input type="file" name="file" id="file" accept="audio/*" required />
+        <button type="submit">Transcrever</button>
+      </form>
+
+      {% if transcription %}
+      <h2>Transcrição:</h2>
+      <p>{{ transcription }}</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
