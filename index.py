@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, redirect, url_for
 import whisper
 import os
 
+model = whisper.load_model("tiny")
+
 app = Flask(__name__)
 
 # Carregar o modelo Whisper
